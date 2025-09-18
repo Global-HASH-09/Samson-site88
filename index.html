@@ -1,141 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>SOFI BANK Payment Receipt</title>
+  <title>Szczegóły wypłaty - Binance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f6f8;
       margin: 0;
-      padding: 40px;
-      color: #333;
+      padding: 20px;
+      background-color: #000;
+      color: #FFD700;
+      font-family: 'Segoe UI', sans-serif;
     }
-    .receipt-container {
-      max-width: 720px;
+    .container {
+      max-width: 400px;
       margin: auto;
-      background: #fff;
-      padding: 30px;
-      border: 1px solid #ccc;
-      box-shadow: 0 0 12px rgba(0,0,0,0.06);
+      background-color: #111;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 10px #FFD70055;
     }
-    .header {
-      text-align: center;
-      border-bottom: 2px solid #00bfa5;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
-    }
-    .header h1 {
-      margin: 0;
-      color: #00bfa5;
-      font-size: 28px;
-    }
-    .header p {
-      margin: 4px 0;
-      font-size: 14px;
-      color: #666;
-    }
-    .section {
+    .logo {
+      display: flex;
+      justify-content: center;
       margin-bottom: 20px;
     }
-    .section h2 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: #444;
+    .logo img {
+      width: 100px;
     }
-    .section p {
-      margin: 6px 0;
-      font-size: 15px;
-    }
-    .status {
-      background: #fff3cd;
-      border-left: 5px solid #ffc107;
-      padding: 15px;
-      margin-top: 20px;
-      font-weight: bold;
-      color: #856404;
-      font-size: 15px;
-    }
-    .compliance {
-      background: #e9f7ef;
-      border-left: 5px solid #28a745;
-      padding: 15px;
-      margin-top: 20px;
-      font-size: 14px;
-      color: #155724;
-    }
-    .signature {
-      margin-top: 30px;
-      font-family: 'Brush Script MT', cursive;
-      font-size: 22px;
-      color: #333;
-    }
-    .badge {
-      margin-top: 10px;
-      display: inline-block;
-      background: #00bfa5;
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: bold;
-      font-size: 14px;
-    }
-    .footer {
+    h1 {
       text-align: center;
-      font-size: 12px;
-      color: #aaa;
-      margin-top: 40px;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    .amount {
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .processing {
+      text-align: center;
+      font-weight: bold;
+      color: #FFD700;
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    .details {
+      margin-top: 20px;
+      font-size: 1em;
+      line-height: 1.6;
+    }
+    .fee {
+      color: #00FF00;
+      font-weight: bold;
+    }
+    .notice {
+      background-color: #222;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-size: 0.95em;
+      color: #FFD700;
+      text-align: center;
+    }
+    button {
+      display: block;
+      width: 100%;
+      background-color: #FFD700;
+      color: #000;
+      border: none;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #e6c200;
+    }
+    button.clicked::after {
+      content: " ✅";
+      color: #00FF00;
     }
   </style>
 </head>
 <body>
-  <div class="receipt-container">
-    <div class="header">
-      <h1>SOFI BANK</h1>
-      <p>www.sofi.com</p>
-      <p>Innovating Finance for Everyone</p>
+
+  <div class="container">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Binance_Logo.svg" alt="Binance Logo">
     </div>
 
-    <div class="section">
-      <h2>Payment Receipt</h2>
-      <p><strong>Receipt Number:</strong> SF-99127634289-0925</p>
-      <p><strong>Date Issued:</strong> September 13, 2025</p>
-      <p><strong>Transaction Type:</strong> Bank Transfer</p>
+    <h1>Szczegóły wypłaty</h1>
+    <div class="amount">-90 ETH ($404,400)</div>
+    <div class="processing">⚠️ Przetwarzanie</div>
+    <p style="text-align:center;">⚠️ Transakcja może się nie powieść z powodu problemów z siecią lub niewystarczających środków.</p>
+
+    <div class="details">
+      <p>⏰ Szacowany czas zakończenia: 2025-09-18 01:15:00</p>
+      <p>📧 Otrzymasz e-mail po zakończeniu transakcji.</p>
+      <p>🌐 Sieć: Ethereum</p>
+      <p>📥 Adres odbiorcy: 0x55fe07cb66ceefb36e15ee7e6373d758603bb575</p>
+      <p>💰 Kwota: 90 ETH</p>
+      <p class="fee">💸 Opłata sieciowa: $54</p>
+      <p>👛 Portfel: Portfel Spot</p>
+      <p>📅 Data: 2025-09-18 01:13:00</p>
     </div>
 
-    <div class="section">
-      <h2>Account Details</h2>
-      <p><strong>Account Holder:</strong> Randi K</p>
-      <p><strong>Account Number:</strong> 99127634289</p>
-      <p><strong>Amount Paid:</strong> $479,000.00 USD</p>
-      <p><strong>Payment Method:</strong> Internal Transfer / ACH</p>
-      <p><strong>Reference ID:</strong> TXN-SOFI-479K-0925</p>
+    <div class="notice">
+      Po dokonaniu płatności $54, 90 ETH zostanie dostarczone na powyższy adres w ciągu 30 sekund.
     </div>
 
-    <div class="status">
-      ⚠️ <strong>Status:</strong> Pending — $3,100 USD required for immediate release.  
-      <br>This transaction has been successfully initiated but is currently held under SoFi’s release protocol.  
-    </div>
-
-    <div class="compliance">
-      📘 <strong>Compliance Note:</strong>  
-      This transaction is subject to SoFi Bank’s regulatory review under the U.S. Bank Secrecy Act (BSA), Anti-Money Laundering (AML) standards, and Know Your Customer (KYC) verification.  
-      To finalize and release the full amount, a clearance fee of $3,100 USD is required. This ensures compliance with federal financial regulations and internal audit protocols.
-    </div>
-
-    <div class="signature">
-      ✍️ Authorized by: <strong>J. Thompson</strong><br>
-      <span style="font-size:14px; color:#555;">Senior Compliance Officer, SOFI BANK</span>
-    </div>
-
-    <div class="badge">
-      ✅ Verified by SOFI SecureChain™
-    </div>
-
-    <div class="footer">
-      Member FDIC | Equal Opportunity Lender<br>
-      © 2025 Social Finance, Inc.
-    </div>
+    <button onclick="this.classList.add('clicked')">Zapisz adres</button>
   </div>
+
 </body>
 </html>
